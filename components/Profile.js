@@ -7,25 +7,29 @@ const Profile = () => {
       id: "fb",
       name: "Facebook",
       imgName: "/facebook.png",
+      href: "https://www.facebook.com/divyanshsingh619",
     },
     {
       id: "twitter",
       name: "Twitter",
       imgName: "/twitter.png",
+      href: "https://twitter.com/DIVYANS98172668",
     },
     {
       id: "linkedin",
       name: "LinkedIn",
       imgName: "/linkedin.png",
+      href: "https://www.linkedin.com/in/divyansh619/",
     },
     {
       id: "github",
       name: "GitHub",
       imgName: "/github.png",
+      href: "https://github.com/Divyansh619",
     },
   ];
   return (
-    <section className="py-10 bg-black m-8 rounded-2xl">
+    <section className="py-10 bg-black m-2 md:m-8 rounded-2xl">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex justify-center">
           {/* Profile Picture */}
@@ -50,9 +54,9 @@ const Profile = () => {
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4">
             {socialMediaData.map((item) => (
-              <div
+              <a
                 key={item.id}
-                // href={`https://www.${item.id}.com`}
+                href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center  bg-white rounded-lg transition-all hover:shadow-md"
@@ -65,7 +69,7 @@ const Profile = () => {
                     alt={item.name}
                   />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -83,7 +87,7 @@ const Profile = () => {
               />
               <span>
                 <div className="font-semibold text-sm text-gray-400">Phone</div>{" "}
-                <div>+91-7007011378</div>
+                <a href={`tel:${+91-7007011378}`}>+91-7007011378</a>
               </span>
             </div>
 
@@ -97,7 +101,7 @@ const Profile = () => {
               />
               <span>
                 <div className="font-semibold text-sm text-gray-400">Email</div>{" "}
-                <div>divyanshsingh619@gmail.com</div>
+                <a className="break-all"  href="mailto:divyanshsingh619@gmail.com">divyanshsingh619@gmail.com</a>
               </span>
             </div>
             <div className="mt-2 text-base border-b-2 border-gray-700 pb-2 flex items-center">
@@ -112,7 +116,7 @@ const Profile = () => {
                 <div className="font-semibold text-sm text-gray-400">
                   Address
                 </div>{" "}
-                <div>Civil Lines, Sultanpur, Uttar pradesh</div>
+                <div>Civil Lines,Sultanpur</div>
               </span>
             </div>
             <div className="mt-2 text-base border-b-2 border-gray-700 pb-2 flex items-center">

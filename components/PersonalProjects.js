@@ -53,7 +53,7 @@ const PersonalProjects = () => {
     },
   ];
   return (
-    <section className="py-10 m-8 rounded-2xl bg-black text-white    ">
+    <section className="py-10 m-2 md:m-8 rounded-2xl bg-black text-white    ">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center relative">
           <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
@@ -87,7 +87,7 @@ const PersonalProjects = () => {
                 </div>
 
                 <div className="border-t border-gray-200">
-                  <div className="flex items-center justify-between px-6 py-5 bg-zinc-100 hover:bg-gray-100 transition duration-200">
+                  <div className="flex items-center justify-between px-3 py-3 bg-zinc-100 hover:bg-gray-100 transition duration-200">
                     <div className="flex items-center flex-shrink-0">
                       <Image
                         src={item.logo}
@@ -99,7 +99,7 @@ const PersonalProjects = () => {
 
                     <a
                       href={item.href}
-                      className="inline-flex items-center justify-center px-4 py-2 text-base font-semibold text-white transition-all duration-200 rounded-lg  bg-gradient-to-r from-purple-600 to-pink-600"
+                      className="inline-flex ml-3 items-center justify-center px-4 py-2 text-base font-semibold text-white transition-all duration-200 rounded-lg  bg-gradient-to-r from-purple-600 to-pink-600"
                     >
                       Visit Website
                       <svg

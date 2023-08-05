@@ -6,9 +6,11 @@ import React, { useState } from "react";
 import Home from "@/components/Home";
 import Resume from "@/components/Resume";
 import Profile from "@/components/Profile";
+import Link from "next/link";
 
 const index = () => {
   const [selectedSection, setSelectedSection] = useState("Home");
+  const [activeTab, setActiveTab] = useState("creative");
 
   const section = [
     {
@@ -69,6 +71,12 @@ const index = () => {
     }
   };
 
+  const toggleTab = (tab) => {
+    setActiveTab(tab);
+  };
+
+   
+
   return (
     <div className="bg-gradient-to-r from-[#ef745c] to-[#34073d]">
       <div className="grid md:grid-cols-5">
@@ -80,12 +88,12 @@ const index = () => {
         {/* #Right_Section */}
         <div className="md:col-span-3">
           {/* #Toggling_Section */}
-          <div className="flex flex-wrap justify-center m-8 rounded-2xl bg-black p-4">
+          <div className="hidden md:flex md:flex-wrap md:justify-center   md:m-8 md:rounded-2xl md:bg-black md:p-4">
             {section?.map((item) => (
               <div
                 key={item.id}
                 onClick={() => setSelectedSection(item.name)}
-                className={`m-2 p-4 w-32 max-w-sm border rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300 ${
+                className={`m-2 p-4 w-28 max-w-sm border rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300 ${
                   selectedSection === item.name
                     ? "bg-gradient-to-r from-[#ff0f7b] to-[#f89b29] text-white"
                     : "bg-gray-800 text-white"
@@ -101,6 +109,22 @@ const index = () => {
             ))}
           </div>
 
+          {/* #Mobile */}
+          <div className="md:hidden m-2">
+         
+          {section.map((item)=>{
+            return  <button
+            className={`py-2 w-20 px-4 m-1.5 rounded-lg ${
+              selectedSection === item.name
+                ? "text-white bg-gradient-to-r from-[#ff0f7b] to-[#f89b29] text-white"
+                : "bg-gray-900 text-white"
+            }`}
+            onClick={() => setSelectedSection(item.name)}
+          > {item.name}</button>
+          })}
+       
+          </div>
+        
           {/* #Box */}
           <div>{selectedpart(selectedSection)}</div>
         </div>
