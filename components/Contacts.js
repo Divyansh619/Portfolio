@@ -1,7 +1,41 @@
-import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Modal from "./Modal";
 
 const Contacts = () => {
+  const form = useRef();
+  const [openModal, setOpenModal] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setOpenModal(true);
+    emailjs
+      .sendForm(
+        "service_ljwxvi8",
+        "template_xj5xhbh",
+        form.current,
+        "YaWLKuJtotEbgi1of"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  useEffect(() => {
+    const modalTimeout = setTimeout(() => {
+      setOpenModal(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(modalTimeout);
+    };
+  }, []);
+
   return (
     <section class="py-10 bg-black m-2 md:m-8 rounded-2xl ">
       <div class="px-4 mx-auto sm:px-6 base:px-8 max-w-7xl">
@@ -66,7 +100,11 @@ const Contacts = () => {
               <h3 class="text-3xl font-semibold text-center text-white">
                 Send me a message
               </h3>
-              <form method="POST" class="mt-8">
+
+              {openModal && <Modal onClose={() => setOpenModal(false)} />}
+
+              {/* #Form */}
+              <form ref={form} onSubmit={sendEmail} class="mt-8">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
                   <div>
                     <label for="" class="text-base font-medium text-white">
@@ -76,10 +114,10 @@ const Contacts = () => {
                       <input
                         required
                         type="text"
-                        name=""
-                        id=""
+                        name="user_name"
+                        id="user_name"
                         placeholder="Enter your full name"
-                        class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-black border border-blue-600 rounded-md focus:outline-none focus:border-yellow-600 caret-yellow-600"
+                        class="block w-full px-4 py-4 text-pink-500 placeholder-gray-500 transition-all duration-200 bg-black border border-blue-600 rounded-md focus:outline-none focus:border-yellow-600 caret-yellow-600"
                       />
                     </div>
                   </div>
@@ -92,10 +130,10 @@ const Contacts = () => {
                       <input
                         type="email"
                         required
-                        name=""
-                        id=""
+                        name="user_email"
+                        id="user_email"
                         placeholder="Enter your email address"
-                        class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-black border border-green-600 rounded-md focus:outline-none focus:border-red-600 caret-red-600"
+                        class="block w-full px-4 py-4 text-pink-500 placeholder-gray-500 transition-all duration-200 bg-black border border-green-600 rounded-md focus:outline-none focus:border-red-600 caret-red-600"
                       />
                     </div>
                   </div>
@@ -108,10 +146,11 @@ const Contacts = () => {
                       <input
                         type="tel"
                         required
-                        name=""
-                        id=""
+                        maxLength={10}
+                        name="phone_number"
+                        id="phone_number"
                         placeholder="Enter your phone number"
-                        class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-black border border-purple-600 rounded-md focus:outline-none focus:border-pink-600 caret-pink-600"
+                        class="block w-full px-4 py-4 text-pink-500 placeholder-gray-500 transition-all duration-200 bg-black border border-purple-600 rounded-md focus:outline-none focus:border-pink-600 caret-pink-600"
                       />
                     </div>
                   </div>
@@ -124,10 +163,10 @@ const Contacts = () => {
                       <input
                         type="text"
                         required
-                        name=""
-                        id=""
+                        name="company_name"
+                        id="company_name"
                         placeholder="Enter your company name"
-                        class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-black border border-orange-600 rounded-md focus:outline-none focus:border-indigo-600 caret-indigo-600"
+                        class="block w-full px-4 py-4 text-pink-500 placeholder-gray-500 transition-all duration-200 bg-black border border-orange-600 rounded-md focus:outline-none focus:border-indigo-600 caret-indigo-600"
                       />
                     </div>
                   </div>
@@ -138,11 +177,11 @@ const Contacts = () => {
                     </label>
                     <div class="mt-2.5 relative">
                       <textarea
-                        name=""
+                        name="message"
                         required
-                        id=""
+                        id="message"
                         placeholder="Enter your message"
-                        class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-black border border-teal-600 rounded-md resize-y focus:outline-none focus:border-lime-600 caret-lime-600"
+                        class="block w-full px-4 py-4 text-pink-500 placeholder-gray-500 transition-all duration-200 bg-black border border-teal-600 rounded-md resize-y focus:outline-none focus:border-lime-600 caret-lime-600"
                         rows="4"
                       ></textarea>
                     </div>
@@ -151,6 +190,7 @@ const Contacts = () => {
                   <div class="sm:col-span-2">
                     <button
                       type="submit"
+                      value="Send"
                       class="inline-flex items-center justify-center w-full px-4 py-4 mt-2 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 border border-transparent rounded-md focus:outline-none hover:bg-gradient-to-r hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 focus:bg-gradient-to-r focus:from-blue-700 focus:via-purple-700 focus:to-pink-700"
                     >
                       Send
