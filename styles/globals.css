@@ -2,26 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.education-box,
+.experience-box {
+  height: 15rem; 
+}
+/* styles.css */
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.marquee {
+  display: flex;
+  animation: marquee 20s linear infinite; /* Adjust the animation duration as needed */
+}
+
+.marquee a.logo {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 40px; /* Adjust the spacing between logos as needed */
+}
+
+/* Keyframes for the marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  100% {
+    transform: translateX(-100%);
+  }
 }
