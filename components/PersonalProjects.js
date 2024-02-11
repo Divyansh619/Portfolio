@@ -47,9 +47,25 @@ const PersonalProjects = () => {
       name: "Admin",
       id: 6,
       description:
-        "The primary objective of this initiative is to design and implement a comprehensive and efficient admin panel capable of overseeing multiple projects simultaneously. The purpose of this admin panel is to empower administrators with the necessary tools and functionalities to ensure the seamless functioning, robust security, and optimal user experience across all associated websites. The admin's responsibility will encompass managing diverse technical aspects while upholding content relevancy and currency for the benefit of website visitors.",
-      logo: "/admin.png",
+        " The purpose of this admin panel is to empower administrators with the necessary tools and functionalities to ensure the seamless functioning, robust security, and optimal user experience across all associated websites. The admin's responsibility will encompass managing diverse technical aspects while upholding content relevancy and currency for the benefit of website visitors.",
+      logo: "",
       href: "https://admin.sashyundai.com/",
+    },
+    {
+      name: "SASXTRA",
+      id: 7,
+      description:
+        "Explore a vast selection of genuine Hyundai and other car brands accessories at SAS Xtra. Elevate your driving experience with premium-quality products, hassle-free returns, and comfort payments.",
+      logo: "/sasxtra.svg",
+      href: "https://www.sasxtra.com//",
+    },
+    {
+      name: "ONEPOST",
+      id: 8,
+      description:
+        "Create, schedule and publish posts on your social media business pages simultaneously. Get real-time insights, so you can focus on other areas of your business.",
+      logo: "/onepost.png",
+      href: "https://onepost.sasone.in/login",
     },
   ];
   return (

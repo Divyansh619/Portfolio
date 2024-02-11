@@ -69,7 +69,7 @@ const Resume = () => {
               {educationdata?.map((item, index) => (
                 <div
                   key={index}
-                  className="education-box my-6 rounded-lg border hover:border-gray-300 bg-gradient-to-r from-gray-900 to-gray-800 p-8 shadow-md  border-pink-500 hover:shadow-xl transition duration-300"
+                  className="education-box my-4 rounded-lg border hover:border-gray-300 bg-gradient-to-r from-gray-900 to-gray-800 p-8 shadow-md  border-pink-500 hover:shadow-xl transition duration-300"
                 >
                   <div className="text-yellow-600 text-sm">{item.year}</div>
 
@@ -97,18 +97,18 @@ const Resume = () => {
               {experiencedata?.map((item, index) => (
                 <div
                   key={index}
-                  className="experience-box my-6 rounded-lg border hover:border-gray-300 bg-gradient-to-r from-gray-900 to-gray-800 p-8 shadow-md border-pink-500 hover:shadow-xl transition duration-300"
+                  className="experience-box my-4 rounded-lg border hover:border-gray-300 bg-gradient-to-r from-gray-900 to-gray-800 p-8 shadow-md border-pink-500 hover:shadow-xl transition duration-300"
                 >
                   <div className="text-yellow-600 text-sm">{item.year}</div>
 
                   <h2 className="mt-4 text-lg  text-white">
                     {item.Jrole}
                   </h2>
-                  <h2 className="mt-2 text-lg font-semibold text-pink-300">
+                  <h2 className="mt-2 lg:text-lg text-sm font-semibold text-pink-300">
                     {item.company}
                   </h2>
 
-                  <p className="mt-2 text-base text-gray-400">
+                  <p className="mt-2 lg:text-base text-sm text-gray-400">
                      <span className="text-purple-400">{item.role}</span> {item.City}
                   </p>
                 </div>

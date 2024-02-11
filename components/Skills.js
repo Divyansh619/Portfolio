@@ -16,21 +16,33 @@ const Skills = () => {
     },
     {
       id: 3,
+      name: "React Native",
+      bar: "70%",
+      color: "from-pink-400 to-blue-500",
+    },
+    {
+      id: 4,
       name: "JavaScript",
       bar: "65%",
       color: "from-yellow-300 to-orange-400",
     },
     {
-      id: 4,
-      name: "CSS",
+      id: 5,
+      name: "CSS3",
       bar: "80%",
       color: "from-blue-400 to-indigo-500",
     },
     {
-      id: 5,
-      name: "HTML",
+      id: 6,
+      name: "HTML5",
       bar: "80%",
       color: "from-red-400 to-pink-500",
+    },
+    {
+      id: 7,
+      name: "Shopify",
+      bar: "70%",
+      color: "from-green-400 to-yellow-500",
     },
   ];
 
@@ -145,6 +157,24 @@ const Skills = () => {
       type: "Methodology",
       logo: "/skill/agile.png",
     },
+    {
+      id: 14,
+      name: "Shopify",
+      type: "Methodology",
+      logo: "/skill/agile.png",
+    },
+    {
+      id: 14,
+      name: "Server Side Rendering",
+      type: "Methodology",
+      logo: "/skill/agile.png",
+    },
+    {
+      id: 15,
+      name: "Github",
+      type: "Methodology",
+      logo: "/skill/agile.png",
+    },
   ];
 
   return (
@@ -187,7 +217,7 @@ const Skills = () => {
           {skillshave.map((item) => {
             return (
               <button key={item.id} className="mt-6 mx-2">
-                <span className="whitespace-nowrap rounded-lg bg-gray-600 px-2.5 py-1.5 text-sm text-white border border-[#e3436b]">
+                <span className="whitespace-nowrap rounded-lg   px-3 py-2 text-sm text-white border hover:border-yellow-400 border-[#e3436b]">
                   {item.name}
                 </span>
               </button>

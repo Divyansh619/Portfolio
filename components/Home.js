@@ -18,13 +18,23 @@ const Home = () => {
       href: "https://www.sashyundai.com/",
     },
     {
-      name: "Sasone",
+      name: "SAS ONE",
       logo: "/saslogo.svg",
       href: "https://www.sasone.in/",
     },
     {
       name: "Rozgaar",
       logo: "/Rozgaar.svg",
+      href: "https://www.rozgaarindia.com/",
+    },
+    {
+      name: "ONE POST",
+      logo: "/onepost.png",
+      href: "https://www.rozgaarindia.com/",
+    },
+    {
+      name: "SASXTRA",
+      logo: "/sasxtra.svg",
       href: "https://www.rozgaarindia.com/",
     },
   ];

@@ -35,7 +35,7 @@ const Profile = () => {
           {/* Profile Picture */}
           <div className="relative h-60 w-60 overflow-hidden rounded-full shadow-lg">
             <Image
-              src="/family.webp"
+              src="/photo.jpg"
               alt="Profile Picture"
               layout="fill"
               objectFit="cover"
@@ -46,7 +46,7 @@ const Profile = () => {
         </div>
 
         <div className="text-center mt-4">
-          <h2 className="text-3xl font-bold text-white">Divyansh Singh</h2>
+          <h1 className="text-3xl font-bold text-white">Divyansh Singh</h1>
           <p className="mt-2 text-base  text-gray-400">Frontend Developer</p>
         </div>
 
@@ -74,6 +74,29 @@ const Profile = () => {
           </div>
         </div>
 
+        {/* #Resume */}
+        <div className="mt-8 flex justify-center">
+          <div className="relative inline-flex group">
+            <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+            <a
+              href="/Divyansh 2K24 CV.pdf"
+              target="_blank"
+              download="your_resume.pdf"
+              className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+              role="button"
+            >
+              Download Resume
+              <span>
+                <img
+                src="/pdf.png"
+                className="h-6 ml-3 w-6"
+                />
+              </span>
+            </a>
+          
+          </div>
+        </div>
+
         <div className="mt-8">
           {/* Contact Details */}
           <div className="text-white bg-gray-900 p-4 rounded-lg">
@@ -87,7 +110,7 @@ const Profile = () => {
               />
               <span>
                 <div className="font-semibold text-sm text-gray-400">Phone</div>{" "}
-                <a href={`tel:${+91-7007011378}`}>+91-7007011378</a>
+                <a href={`tel:${+91 - 7007011378}`}>+91-7007011378</a>
               </span>
             </div>
 
@@ -101,7 +124,12 @@ const Profile = () => {
               />
               <span>
                 <div className="font-semibold text-sm text-gray-400">Email</div>{" "}
-                <a className="break-all"  href="mailto:divyanshsingh619@gmail.com">divyanshsingh619@gmail.com</a>
+                <a
+                  className="break-all"
+                  href="mailto:divyanshsingh619@gmail.com"
+                >
+                  divyanshsingh619@gmail.com
+                </a>
               </span>
             </div>
             <div className="mt-2 text-base border-b-2 border-gray-700 pb-2 flex items-center">

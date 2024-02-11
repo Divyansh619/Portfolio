@@ -76,18 +76,48 @@ const index = () => {
   return (
     <>
       <Head>
+        {/* <!-- Primary Meta Tags --> */}
         <title>Divyansh Singh - Portfolio</title>
-        <meta name="description" content="This is a portfolio which tells all the details about me" key="desc" />
-        <meta property="og:title" content="Portfolio- Divyansh singh" />
+        <meta name="title" content="Divyansh Singh - Portfolio" />
+        <meta
+          name="description"
+          content="This is a portfolio which tells all the details about me"
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://divyansh619.netlify.app/" />
+        <meta property="og:title" content="Divyansh Singh - Portfolio" />
         <meta
           property="og:description"
           content="This is a portfolio which tells all the details about me"
         />
+        <link rel='canonical' href='https://divyansh619.netlify.app/' />
         <meta
           property="og:image"
           content="https://divyansh619.netlify.app/family.webp"
         />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://divyansh619.netlify.app/"
+        />
+        <meta property="twitter:title" content="Divyansh Singh - Portfolio" />
+        <meta
+          property="twitter:description"
+          content="This is a portfolio which tells all the details about me"
+        />
+        <meta
+          property="twitter:image"
+          content="https://divyansh619.netlify.app/family.webp"
+        />
+
+     
       </Head>
+
+
       <div className="bg-gradient-to-r from-[#ef745c] to-[#34073d]">
         <div className="grid md:grid-cols-5">
           {/* #Left_Section */}
