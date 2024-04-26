@@ -10,7 +10,7 @@ const Resume = () => {
       branch: "Mechanical Engineering",
       year: "2014-18",
       school: "Kamla Nehru Institute of Technology",
-      City: "Sultanpur,up",
+      City: "Sultanpur, Uttar Pradesh",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const Resume = () => {
 
       year: "2012-14",
       school: "Stella Maris Convent School",
-      City: "Sultanpur,up",
+      City: "Sultanpur, Uttar Pradesh",
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const Resume = () => {
 
       year: "2011-12",
       school: "Stella Maris Convent School",
-      City: "Sultanpur,up",
+      City: "Sultanpur, Uttar Pradesh",
     },
   ];
 
@@ -37,7 +37,7 @@ const Resume = () => {
       company: "SASONE ",
       year: "April 22 -July 22",
       role: "Internship",
-      City: "Lucknow,up",
+      City: "Lucknow, Uttar Pradesh",
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ const Resume = () => {
       company: "SASONE ",
       year: "August 22 - Present",
       role: "Fulltime",
-      City: "Lucknow,up",
+      City: "Lucknow, Uttar Pradesh",
     },
   ];
 

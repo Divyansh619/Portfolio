@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Modal = ({ onClose }) => {
-   
+const Modal = ({ onClose, textOne }) => {
   return (
     <div
       className="fixed top-0 z-50 left-0 flex justify-center items-center w-screen h-screen bg-black bg-opacity-70"
@@ -37,7 +36,7 @@ const Modal = ({ onClose }) => {
             </p>
 
             <p className="line-clamp-1 flex mt-4 justify-center text-sm text-white">
-              Your message has been sent successfully!
+              {textOne}
             </p>
             <p className="line-clamp-1 flex justify-center text-sm text-white">
               We will get back to you as soon as possible.

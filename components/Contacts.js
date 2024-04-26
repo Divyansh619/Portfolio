@@ -5,10 +5,11 @@ import Modal from "./Modal";
 const Contacts = () => {
   const form = useRef();
   const [openModal, setOpenModal] = useState(false);
+  const [message, setMessage] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setOpenModal(true);
+
     emailjs
       .sendForm(
         "service_ljwxvi8",
@@ -18,9 +19,13 @@ const Contacts = () => {
       )
       .then(
         (result) => {
+          setMessage("Your message has been sent successfully!");
+          setOpenModal(true);
           console.log(result.text);
         },
         (error) => {
+          setMessage(error.text);
+          setOpenModal(true);
           console.log(error.text);
         }
       );
@@ -69,7 +74,7 @@ const Contacts = () => {
             <div class="bg-gray-900 border border-pink-500 rounded-xl">
               <div class="p-6">
                 <img src={"/gmail.png"} height={45} width={45} />
-                <p class="mt-6 md:text-xs text-base font-medium text-white">
+                <p class="mt-6   text-base font-medium text-white">
                   <a
                     href="mailto:divyanshsingh619@gmail.com"
                     class="underline max-w-full break-all"
@@ -101,7 +106,9 @@ const Contacts = () => {
                 Send me a message
               </h3>
 
-              {openModal && <Modal onClose={() => setOpenModal(false)} />}
+              {openModal && (
+                <Modal textOne={message} onClose={() => setOpenModal(false)} />
+              )}
 
               {/* #Form */}
               <form ref={form} onSubmit={sendEmail} class="mt-8">
